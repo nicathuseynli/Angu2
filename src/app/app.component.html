@@ -1,0 +1,15 @@
+<div class="container">
+  <app-task2></app-task2>
+</div>
+<hr>
+  <div class="container">
+  <app-game-control (numberCreate)="addNum($event)"></app-game-control>
+    <div class="row" *ngFor="let num of nums">
+      <div class="col-6">
+        <app-odd [addNum]="num" *ngIf="num%2!==0"></app-odd>
+      </div>
+      <div class="col-6">
+        <app-even [addEven]="num" *ngIf="num%2==0"></app-even>
+      </div>
+    </div>
+</div>
